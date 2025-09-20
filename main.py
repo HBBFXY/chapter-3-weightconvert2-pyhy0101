@@ -1,12 +1,14 @@
-MOON_WEIGHT_RATIO = 0.165
-ANNUAL_WEIGHT_GAIN = 0.5
-YEARS = 10
-current_weight = 0
-print("\n未来10年您在地球和月球上的体重变化:")
-print("年数\t地球体重(kg)\t月球体重(kg)")
-print("-" * 40)
-# 计算并输出未来10年的体重变化
-for year in range(YEARS + 1):
-    earth_weight = current_weight + year * ANNUAL_WEIGHT_GAIN
-    moon_weight = earth_weight * MOON_WEIGHT_RATIO
-    print(f"{year}\t{earth_weight:.2f}\t\t{moon_weight:.2f}")
+def main():
+    # 获取当前体重
+    current_weight = float(input("请输入您当前的体重（kg）: "))
+    # 月球体重转换率
+    moon_ratio = 0.165
+    print("\n年份\t地球体重(kg)\t月球体重(kg)")
+    print("-" * 35)
+    # 计算并输出未来10年的体重变化
+    for year in range(1, 11):
+        earth_weight = current_weight + 0.5 * year
+        moon_weight = earth_weight * moon_ratio
+        print(f"{year}\t{earth_weight:.2f}\t\t{moon_weight:.2f}")
+if __name__ == "__main__":
+    main()
